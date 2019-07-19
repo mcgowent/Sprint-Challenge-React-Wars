@@ -1,4 +1,6 @@
 import React from 'react';
+import Data from "./components/Data"
+
 import './App.css';
 
 const App = () => {
@@ -12,6 +14,7 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
+      <Data />
     </div>
   );
 }
