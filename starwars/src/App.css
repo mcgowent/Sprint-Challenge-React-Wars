@@ -14,10 +14,6 @@
 }
 
 .card {
-  width:200px;
-  height: 200px;
-  color:white;
-  background: black;
   margin: 10px;
 }
 /* write your parent styles in here for your App.js */

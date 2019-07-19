@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
-
+import { Card } from 'semantic-ui-react'
 
 
 const Data = () => {
@@ -15,13 +15,22 @@ const Data = () => {
             .catch(err => { return 'nothing' })
     }, []);
 
+    let i = 0;
+
     return (
         <div className="flexCard">
             {data.map(e => {
                 return (
-                    <div className="card">
-                        <div>{e.name}</div>
-                        <div>{e.height}</div>
+                    <div className="card" key={i++}>
+                        <Card.Group>
+                            <Card>
+                                <Card.Content>
+                                    <Card.Header content={e.name} />
+                                    <Card.Meta content={e.gender} />
+                                    <Card.Description content={e.homeworld} />
+                                </Card.Content>
+                            </Card>
+                        </Card.Group>
                     </div>
                 )
             })}
@@ -30,21 +39,3 @@ const Data = () => {
 }
 
 export default Data;
-
-{/*
-    {data.name.map(e => {
-                return <CardContent
-                    key={e.name}
-                    name={e.name}
-
-                />
-            })}
-    
-    
-    height={e.height}
-                    mass={e.hair_color}
-                    skinColor={e.skin_color}
-                    hairColor={e.hair_color}
-                    eyeColor={e.eye_color}
-                    birthYear={e.birth_year}
-                    gender={e.gender}*/}
