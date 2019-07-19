@@ -28,7 +28,11 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] What does it mean to _think_ in react?
 
+I think it is referring to way of thinking in components.
+
 - [ ] Describe state.
+
+
 
 - [ ] Describe props.
 
