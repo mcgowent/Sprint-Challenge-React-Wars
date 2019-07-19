@@ -15,14 +15,36 @@ const Data = () => {
             .catch(err => { return 'nothing' })
     }, []);
 
-
     return (
-        <div className="Data">
+        <div className="flexCard">
             {data.map(e => {
-                return <div>{e.name}</div>
+                return (
+                    <div className="card">
+                        <div>{e.name}</div>
+                        <div>{e.height}</div>
+                    </div>
+                )
             })}
         </div>
     );
 }
 
 export default Data;
+
+{/*
+    {data.name.map(e => {
+                return <CardContent
+                    key={e.name}
+                    name={e.name}
+
+                />
+            })}
+    
+    
+    height={e.height}
+                    mass={e.hair_color}
+                    skinColor={e.skin_color}
+                    hairColor={e.hair_color}
+                    eyeColor={e.eye_color}
+                    birthYear={e.birth_year}
+                    gender={e.gender}*/}
