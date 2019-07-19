@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
-import { Card } from 'semantic-ui-react'
+import { Card, Button } from 'semantic-ui-react'
 
 
 const Data = () => {
 
     const [data, setData] = useState([]);
+    const [url, setUrl] = useState('https://swapi.co/api/people/?format=json');
+
 
     useEffect(() => {
-        axios.get("https://swapi.co/api/people/?format=json")
+        axios.get(url)
             .then(e => {
                 setData(e.data.results);
             })
             .catch(err => { return 'nothing' })
-    }, []);
+    }, [url]);
 
     let i = 0;
 
@@ -34,6 +36,8 @@ const Data = () => {
                     </div>
                 )
             })}
+            <Button content="First Page" onClick={() => setUrl("https://swapi.co/api/people/?format=json")}></Button>
+            <Button secondary onClick={() => setUrl("https://swapi.co/api/people/?page=2&format=json")}>Next Page</Button>
         </div>
     );
 }
